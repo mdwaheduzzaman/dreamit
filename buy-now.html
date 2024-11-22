@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Course</title>
+    <link rel="stylesheet" type="text/css" href="CSS/style.css">
+    <link rel="page" href="index.html">
+    <link rel="page" href="wordpressandecommerce.html">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/orderform.css">
+</head>
+<body>
+    <!--- Start header -->
+    <header>
+        <a href="index.html#home" class="logo">
+            <img src="image/DreamWeb-Logo.png" alt="DreamWeb Logo">
+        </a>
+
+        <ul class="navbar">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#categories">Service</a></li>
+            <li><a href="index.html#courses">Courses</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+
+        <div class="header-icons">
+            <a href="#"><i class='bx bxl-facebook'></i></a>
+            <a href="#"><i class='bx bxl-github'></i></a>
+            <a href="#"><i class='bx bxl-youtube'></i></a>
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
+    </header>
+
+    <!-- Buy Now Form -->
+    <section id="buy-now">
+        <div class="form-container">
+            <h3>Course Details</h3>
+            <p id="course-name" style="font-size: 20px; font-weight: 700"></p>
+            <p id="course-price" style="font-size: 20px; font-weight: 700"></p>
+            <br>
+            <h3>Fill The Form To Buy The Course</h3>
+            <form action="mailto:srmidea86@gmail.com" method="post" enctype="text/plain">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+    
+                <label for="mobile">Mobile Number:</label>
+                <input type="tel" id="mobile" name="mobile" required>
+    
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+    
+                <label for="education">Educational Qualification:</label>
+                <input type="text" id="education" name="education" required>
+    
+                <label for="profession">Profession:</label>
+                <input type="text" id="profession" name="profession" required>
+    
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" required></textarea>
+    
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </section>
+    
+    <script>
+        // Function to get URL parameters
+        function getUrlParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+    
+        // Retrieve and display course details
+        const courseName = getUrlParameter('productName');
+        const coursePrice = getUrlParameter('productPrice');
+    
+        document.getElementById('course-name').innerText = `Course Name: ${courseName}`;
+        document.getElementById('course-price').innerText = `Price: ৳ ${coursePrice}`;
+    </script>
+    
+
+    <script src="JS/script.js"></script>
+</body>
+</html>
